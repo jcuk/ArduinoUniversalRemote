@@ -61,15 +61,14 @@ void setup() {
   Ethernet.begin(mac, ip);
   remoteCore.begin();
   server.begin();
-  Serial.println("Arduino Universal IR Remote Server");
+  Serial.print("Universal IR Remote Server ");
+  Serial.println(version);
+  
   Serial.println("(c) Jason Crane 2015");
   //Serial.println("Arduino Universal IR Remote Server comes with ABSOLUTELY NO WARRANTY;  ");
   //Serial.println("This is free software, and you are welcome to redistribute it  under certain conditions. See GPL v2");
   
-  Serial.print("Version :");
-  Serial.println(version);
-
-  Serial.print("Server is at ");
+  Serial.print("IP:");
   Serial.println(Ethernet.localIP());
 
 }
