@@ -43,7 +43,7 @@ byte mac[] = {
 };
 IPAddress ip(192, 168, 1, 80);
 
-String version="1.0.1-SNAPSHOT";
+String version="1.0.1";
 
 //Wrapper for IRRemote services
 RemoteCore remoteCore;
