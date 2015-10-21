@@ -138,6 +138,7 @@ void RemoteCore::sendCode(unsigned int decode_type,
     // and Pronto decoding is not implented
   }
   
+  
   digitalWrite(TX_STATUS, LOW);  
 }
 
@@ -155,25 +156,25 @@ void RemoteCore::readIRCode() {
         int count = new_results.rawlen;
         if (codeType == UNKNOWN) {
           Serial.println("Received unknown code, saving as raw");
-          int codeLen = new_results.rawlen - 1;
-          // To store raw codes:
-          // Drop first value (gap)
-          // Convert from ticks to microseconds
-          // Tweak marks shorter, and spaces longer to cancel out IR receiver distortion
-          for (int i = 1; i <= codeLen; i++) {
-            if (i % 2) {
-              // Mark
-              rawCodes[i - 1] = new_results.rawbuf[i]*USECPERTICK - MARK_EXCESS;
-              Serial.print(" m");
-            } 
-            else {
-              // Space
-              rawCodes[i - 1] = new_results.rawbuf[i]*USECPERTICK + MARK_EXCESS;
-              Serial.print(" s");
-            }
-            Serial.print(rawCodes[i - 1], DEC);
-          }
-          Serial.println("");
+//          int codeLen = new_results.rawlen - 1;
+//          // To store raw codes:
+//          // Drop first value (gap)
+//          // Convert from ticks to microseconds
+//          // Tweak marks shorter, and spaces longer to cancel out IR receiver distortion
+//          for (int i = 1; i <= codeLen; i++) {
+//            if (i % 2) {
+//              // Mark
+//              rawCodes[i - 1] = new_results.rawbuf[i]*USECPERTICK - MARK_EXCESS;
+//              Serial.print(" m");
+//            } 
+//            else {
+//              // Space
+//              rawCodes[i - 1] = new_results.rawbuf[i]*USECPERTICK + MARK_EXCESS;
+//              Serial.print(" s");
+//            }
+//            Serial.print(rawCodes[i - 1], DEC);
+//          }
+//          Serial.println("");
         }
         else {
       
