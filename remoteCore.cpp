@@ -138,7 +138,8 @@ void RemoteCore::sendCode(unsigned int decode_type,
     // and Pronto decoding is not implented
   }
   
-  
+  //Without restarting IRIn, reading is disabled
+  irrecv.enableIRIn();
   digitalWrite(TX_STATUS, LOW);  
 }
 

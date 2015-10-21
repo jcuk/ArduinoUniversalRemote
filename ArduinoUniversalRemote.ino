@@ -24,10 +24,10 @@
  * IR led out pin 3
  * TSOP4838 IR reciever in pin 9
  * Rx Status LED Pin 5
- * Tx Status LEDs pin 6
+ * Tx Status LED pin 6
  */
  
- #include <IRremote.h>
+#include <IRremote.h>
 #include <IRremoteInt.h>
 #include "remoteCore.h"
 #include <stdio.h>
